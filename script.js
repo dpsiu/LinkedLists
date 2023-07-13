@@ -75,6 +75,24 @@ class Node {
             }
         }
     }
+
+    pop () {
+        let current = this.head
+
+        while (current.next.next) {
+            current = current.next
+        }
+        // "While the next next value is true, set our current node to the next
+        // effectively moving on to the next node and making it our current node."
+        // "Do this WHILE true, so if the current node's next node doesn't have a next
+        // we may assume that the current node is the second to last node."
+        // Instead of thinking delete/remove, we are cutting it off. Disconnecting the node.
+        // Our current's (2nd to last) last value is set to null, "removing the last node"
+        // this.tail (the last node of the list) is set to current
+
+        current.next = null
+        this.tail = current
+    }
   }
   
   const linkedList = new LinkedList()

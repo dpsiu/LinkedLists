@@ -115,6 +115,47 @@ class Node {
             return "False, list doesn't contain " + value
         }
     }
-  }
-  
+
+    // getNodeAt (index) {
+    //     let count = 0
+    //     let current = this.head
+
+    //     while (current != null) {
+    //         if (count == index) {
+    //             return current;
+    //         } else {
+    //             count++;
+    //             current = current.next;
+    //         }
+    //     }
+    // }
+    // Above returns the node value at the index #
+
+    // Below returns index# of value if found
+    // Similar to contains? We first see if list contains value.
+    // Simply add a counter to find? index starts at 0.
+    // For every current = current.next, index ++
+    testValues () {
+        linkedList.append(1)
+        linkedList.append(2)
+        linkedList.append(3)
+        linkedList.append(4)
+        linkedList.append(5)
+    }
+
+    find(value){
+        let current = this.head
+        let index = 0
+
+        while (current) {
+            if (current.value === value) {
+                return index;
+            }
+            current = current.next
+            index++
+        }
+        return null
+    }
+}
+
   const linkedList = new LinkedList()

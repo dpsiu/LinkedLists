@@ -43,7 +43,24 @@ class Node {
       }
     }
 
+    size() {
+        let count = ''
+        let current = this.head
 
+        while (current) {
+            count ++
+            current = current.next
+        }
+        return count
+    }
+
+    getHeadNode() {
+        return this.head;
+    }
+
+    getTailNode() {
+        return this.tail;
+    }
   }
   
   const linkedList = new LinkedList()

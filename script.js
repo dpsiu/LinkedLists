@@ -61,6 +61,20 @@ class Node {
     getTailNode() {
         return this.tail;
     }
+
+    getNodeAt (index) {
+        let count = 0
+        let current = this.head
+
+        while (current != null) {
+            if (count == index) {
+                return current;
+            } else {
+                count++;
+                current = current.next;
+            }
+        }
+    }
   }
   
   const linkedList = new LinkedList()

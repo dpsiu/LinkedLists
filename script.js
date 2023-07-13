@@ -156,6 +156,19 @@ class Node {
         }
         return null
     }
+
+    toString() {
+        let result = ''
+        let current = this.head
+
+        while (current) {
+            result += `(${current.value}) -> `
+            current = current.next
+        }
+
+        result += "null"
+        return result
+    }
 }
 
   const linkedList = new LinkedList()

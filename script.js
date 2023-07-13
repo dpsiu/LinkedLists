@@ -82,16 +82,38 @@ class Node {
         while (current.next.next) {
             current = current.next
         }
-        // "While the next next value is true, set our current node to the next
-        // effectively moving on to the next node and making it our current node."
-        // "Do this WHILE true, so if the current node's next node doesn't have a next
-        // we may assume that the current node is the second to last node."
-        // Instead of thinking delete/remove, we are cutting it off. Disconnecting the node.
-        // Our current's (2nd to last) last value is set to null, "removing the last node"
-        // this.tail (the last node of the list) is set to current
+// "While the next next value is true, set our current node to the next
+// effectively moving on to the next node and making it our current node."
+// "Do this WHILE true, so if the current node's next node doesn't have a next
+// we may assume that the current node is the second to last node."
+// Instead of thinking delete/remove, we are cutting it off. Disconnecting the node.
 
         current.next = null
         this.tail = current
+// Our current's (2nd to last) last value is set to null, "removing the last node"
+// this.tail (the last node of the list) is set to current  
+
+    }
+
+    contains(value) {
+        // Returns true if value passed exists. False otherwise.
+        let current = this.head
+        // While X is true, iterate through list. While list != null?
+        // How to move nodes? Count orlinked current = current.next
+        // if (value == current), return true, else false
+
+        while (current != null) {
+            
+            if (current.value == value){
+                return "True, list contains " + value
+            } else {
+                current = current.next
+            }   
+        }
+
+        if (this.tail.value != value) {
+            return "False, list doesn't contain " + value
+        }
     }
   }
   
